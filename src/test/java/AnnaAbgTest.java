@@ -66,7 +66,6 @@ public class AnnaAbgTest {
         Thread.sleep(3000);
 
         driver.quit();
-
     }
 
 }
