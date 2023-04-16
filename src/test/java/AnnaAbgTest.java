@@ -35,34 +35,28 @@ public class AnnaAbgTest {
         WebElement searchCityField = driver.findElement(
                 By.xpath("//div[@id='weather-widget']//input[@placeholder='Search city']")
         );
-
         searchCityField.click();
         searchCityField.sendKeys(cityName);
 
         WebElement searchButton = driver.findElement(
                 By.xpath("//div[@id='weather-widget']//button[@type='submit']")
         );
-
         searchButton.click();
-
         Thread.sleep(3000);
 
         WebElement choiceParisFRInDropDownMenu = driver.findElement(
                 By.xpath("//ul[@class='search-dropdown-menu']/li/span[text()='Paris, FR ']")
         );
-
         choiceParisFRInDropDownMenu.click();
 
         WebElement h2CityCountryHeader = driver.findElement(
                 By.xpath("//div[@id='weather-widget']//h2")
         );
-
         Thread.sleep(2000);
-        String actualResult = h2CityCountryHeader.getText();
 
+        String actualResult = h2CityCountryHeader.getText();
         // Assert
         Assert.assertEquals(actualResult, expectedResult);
-
         Thread.sleep(3000);
 
         driver.quit();
